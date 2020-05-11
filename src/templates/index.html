@@ -6,33 +6,40 @@
 
 
 {% block body %}
-<div class="content">
-    <h1>Task Manager</h1>
-    {% if tasks|length <1%}
-    <h2>There are no Task to Show </h2>
-    {% else%}
-    <table>
-        <tr>
-            <th>Task</th>
-            <th>Added on</th>
-            <th>Actions</th>
-        </tr>
-        {% for task in tasks %}
-        <tr>
-            <td>{{ task.content}}</td>
-            <td>{{ task.date_created.date()  }}</td>
-            <td>
-                <a href="/delete/{{task.id}}">Delete</a><br>
-                <a href="/update/{{task.id}}">Update</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% endif%}
-    <form action="/" method="POST">
-        <input type="text" name="content" id="content">
-        <input type="submit" value="Add Task">
-    </form>
-</div>
+<main class="container">
+    <div class="content">
+        <h1 class="display-4 text-center">Task Manager</h1>
+        {% if tasks|length <1%}
+        <h2 class="text-muted text-center">There are no Task to Show </h2>
+        {% else%}
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th>Task</th>
+                <th>Added on</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.content}}</td>
+                <td>{{ task.date_created.date()  }}</td>
+                <td>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <a href="/update/{{task.id}}">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% endif%}
+        <form action="/" method="POST">
+            <input type="text" name="content" id="content">
+            <input type="submit" value="Add Task">
+        </form>
+    </div>
+</main>
 
 {% endblock %}
