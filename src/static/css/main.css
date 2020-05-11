@@ -1,0 +1,22 @@
+#title{
+    text-align: center;
+    font-size: 4em;
+}
+
+#info{
+    color: grey;
+    font-size: 2em;
+    text-align: center
+}
+
+.detail{
+    text-align: justify;
+}
+
+.actionLink{
+    margin-right: 10px;
+    padding: 8px;
+    display:inline;
+    text-decoration:none !important;
+}
+
