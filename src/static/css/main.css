@@ -9,14 +9,23 @@
     text-align: center
 }
 
+thead tr th{
+    text-align: center;
+}
 .detail{
     text-align: justify;
 }
 
+.actionBar{
+    display:flex;
+    justify-content: space-evenly;
+}
+
 .actionLink{
-    margin-right: 10px;
-    padding: 8px;
-    display:inline;
     text-decoration:none !important;
+}
+
+.actionLink:hover{
+    font-size: 110%;
 }
 
